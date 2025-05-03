@@ -1,0 +1,16 @@
+body {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+.font-montserrat{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.blur-effect{
+    background: #11111120;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
