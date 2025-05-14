@@ -17,9 +17,9 @@ const ProjectDetails = () => {
       image: imageOne,
       live_url: "https://mealbox-client-red.vercel.app",
       git_url: "https://github.com/Dodul01/BitePlan-Client",
-      htmlDescription: `<div class="space-y-4 ">
-  <h2 class="text-2xl font-bold ">MealBox Overview</h2>
-  <p>MealBox is a full-stack meal ordering platform designed with a modern UI and secure, scalable architecture. It allows users to browse meals, manage orders, and handle profiles efficiently.</p>
+      htmlDescription: `<div class="space-y-4">
+  <h2 class="text-2xl font-bold">MealBox Overview</h2>
+  <p>MealBox is a full-stack meal ordering platform that offers personalized meal planning and delivery. Users can browse chef-prepared meals, manage orders, and update their preferences with ease. The application is designed with scalability, clean UI, and secure authentication in mind.</p>
 
   <h3 class="text-xl font-semibold">Client Features</h3>
   <ul class="list-disc list-inside space-y-1">
@@ -40,6 +40,7 @@ const ProjectDetails = () => {
     <li>Context API</li>
     <li>Vite</li>
     <li>JWT Authentication</li>
+    <li>Stripe</li>
   </ul>
 
   <h3 class="text-xl font-semibold">Server Features</h3>
@@ -62,8 +63,26 @@ const ProjectDetails = () => {
     <li><code class="bg-gray-600 px-1 py-0.5 rounded">GET /api/get-orders/:email</code> – View user orders</li>
   </ul>
 
-  <p class="pt-2">MealBox demonstrates best practices in modern full-stack development with modular, reusable, and performant components.</p>
-</div>`,
+  <h3 class="text-xl font-semibold">Challenges Faced</h3>
+  <ul class="list-disc list-inside space-y-1">
+    <li>Role-based access control for customers and providers</li>
+    <li>Synchronizing client-server state for orders and cart updates</li>
+    <li>Securely managing authentication across frontend and backend</li>
+    <li>Designing scalable API structure and clean code architecture</li>
+    <li>Ensuring responsiveness and performance across devices</li>
+  </ul>
+
+  <h3 class="text-xl font-semibold">Future Plans</h3>
+  <ul class="list-disc list-inside space-y-1">
+    <li>AI-powered customer support for instant help and inquiries</li>
+    <li>Agent mode for managing orders and customer service</li>
+    <li>Improve accessibility and add test coverage</li>
+    <li>Implement user behavior analytics</li>
+  </ul>
+
+  <p class="pt-2">MealBox follows modern full-stack development practices with a focus on clean, maintainable, and scalable architecture.</p>
+</div>
+`,
     },
     {
       _id: "02",
@@ -110,6 +129,8 @@ const ProjectDetails = () => {
       <li><strong>Solution:</strong> Used Zod schema in backend to ensure price × quantity math is server-side validated.</li>
       <li><strong>Challenge:</strong> Stripe integration with secure payment flow</li>
       <li><strong>Solution:</strong> Followed Stripe best practices with tokenized payment and server-side confirmation.</li>
+      <li><strong>Challenge:</strong> Dashboard performance with large data sets</li>
+      <li><strong>Solution:</strong> Added pagination and optimized MongoDB queries with proper indexing.</li>
     </ul>
   </section>
 
@@ -126,7 +147,19 @@ const ProjectDetails = () => {
       The backend was secured and validated with Zod schemas to ensure type-safe, reliable input handling.
     </p>
   </section>
-</div>`,
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">🔮 Planned Enhancements</h3>
+    <ul class="list-disc list-inside">
+      <li>Introduce a real-time booking calendar</li>
+      <li>AI-powered assistant for car suggestions</li>
+      <li>Agent mode for managing orders and customer service</li>
+      <li>In-app notifications and email reminders</li>
+      <li>Performance dashboards for admins with visual insights</li>
+    </ul>
+  </section>
+</div>
+`,
     },
     {
       _id: "03",
@@ -137,44 +170,65 @@ const ProjectDetails = () => {
       live_url: "https://bookease-537ed.web.app/",
       git_url: "https://github.com/Dodul01/BookEase-Client",
       htmlDescription: `<div class="space-y-6 text-sm leading-relaxed text-gray-300">
-      <h2 class="text-2xl font-bold text-white">📚 BookEase – Online Book Store</h2>
-    
-      <section>
-        <h3 class="text-lg font-semibold text-white">🎯 Project Overview</h3>
-        <p>
-          BookEase is a fully responsive, modern online bookstore built with the MERN stack. It allows users to browse, search, add, update, and delete books while providing a user-friendly interface for efficient book management.
-        </p>
-      </section>
-    
-      <section>
-        <h3 class="text-lg font-semibold text-white">🧠 Features</h3>
-        <ul class="list-disc list-inside">
-          <li>Browse a collection of books by category or title</li>
-          <li>Add, edit, or delete books (CRUD functionality)</li>
-          <li>View detailed book descriptions and images</li>
-          <li>Responsive design for desktop and mobile users</li>
-          <li>Login and register functionality (Firebase Auth)</li>
-        </ul>
-      </section>
-    
-      <section>
-        <h3 class="text-lg font-semibold text-white">⚙️ Technologies Used</h3>
-        <ul class="list-disc list-inside">
-          <li>React.js (Vite)</li>
-          <li>Tailwind CSS for modern styling</li>
-          <li>MongoDB, Express.js, Node.js (Backend)</li>
-          <li>Firebase Authentication</li>
-        </ul>
-      </section>
-    
-      <section>
-        <h3 class="text-lg font-semibold text-white">🔗 Links</h3>
-        <ul class="list-disc list-inside">
-          <li><strong>Live Site:</strong> <a href="https://bookease-537ed.web.app/" class="text-blue-400 hover:underline">bookease-537ed.web.app</a></li>
-          <li><strong>GitHub Repo:</strong> <a href="https://github.com/Dodul01/BookEase-Client" class="text-blue-400 hover:underline">BookEase Client</a></li>
-        </ul>
-      </section>
-    </div>`,
+  <h2 class="text-2xl font-bold text-white">📚 BookEase – Online Book Store</h2>
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">🎯 Project Overview</h3>
+    <p>
+      BookEase is a fully responsive, modern online bookstore built with the MERN stack. It allows users to browse, search, add, update, and delete books while providing a user-friendly interface for efficient book management.
+    </p>
+  </section>
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">🧠 Features</h3>
+    <ul class="list-disc list-inside">
+      <li>Browse a collection of books by category or title</li>
+      <li>Add, edit, or delete books (CRUD functionality)</li>
+      <li>View detailed book descriptions and images</li>
+      <li>Responsive design for desktop and mobile users</li>
+      <li>Login and register functionality (Firebase Auth)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">⚙️ Technologies Used</h3>
+    <ul class="list-disc list-inside">
+      <li>React.js (Vite)</li>
+      <li>Tailwind CSS for modern styling</li>
+      <li>MongoDB, Express.js, Node.js (Backend)</li>
+      <li>Firebase Authentication</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">🛠️ Challenges Faced</h3>
+    <ul class="list-disc list-inside">
+      <li><strong>Authentication complexity:</strong> Managing Firebase auth state consistently across routes</li>
+      <li><strong>Form validation:</strong> Ensuring reliable client/server-side validation during book creation/edit</li>
+      <li><strong>Backend pagination:</strong> Handling performance while scaling book listing with search/filter</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">🚧 Future Plans</h3>
+    <ul class="list-disc list-inside">
+      <li>Improve reviews and ratings for books</li>
+      <li>Implement Stripe payment integration</li>
+      <li>Admin dashboard for booking and inventory management</li>
+      <li>AI-powered book recommendation engine</li>
+      <li>Email notifications for order status and promotions</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">🔗 Links</h3>
+    <ul class="list-disc list-inside">
+      <li><strong>Live Site:</strong> <a href="https://bookease-537ed.web.app/" class="text-blue-400 hover:underline">bookease-537ed.web.app</a></li>
+      <li><strong>GitHub Repo:</strong> <a href="https://github.com/Dodul01/BookEase-Client" class="text-blue-400 hover:underline">BookEase Client</a></li>
+    </ul>
+  </section>
+</div>
+`,
     },
     {
       _id: "04",
@@ -216,14 +270,26 @@ const ProjectDetails = () => {
   </section>
 
   <section>
-    <h3 class="text-lg font-semibold text-white">🔗 GitHub Repository</h3>
-    <p>
-      <a href="https://github.com/Dodul01/PH-University-Backend" class="text-blue-400 hover:underline">
-        View on GitHub
-      </a>
-    </p>
+    <h3 class="text-lg font-semibold text-white">🛠️ Challenges Faced</h3>
+    <ul class="list-disc list-inside">
+      <li><strong>Complex Role Management:</strong> Ensuring proper permissions for admins, instructors, and students using layered middleware</li>
+      <li><strong>Input Validation:</strong> Maintaining strict validation rules across user and course schemas</li>
+      <li><strong>Secure API Access:</strong> Protecting sensitive routes using token verification and error handling strategies</li>
+    </ul>
   </section>
-</div>`,
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">🚧 Future Plans</h3>
+    <ul class="list-disc list-inside">
+      <li>Implement instructor-specific dashboards and APIs</li>
+      <li>Add payment processing for course enrollments</li>
+      <li>Integrate caching with Redis for performance improvement</li>
+      <li>Build a GraphQL version for enhanced client-side querying</li>
+      <li>Integrate email notification system for enrollment updates</li>
+    </ul>
+  </section>
+</div>
+`,
     },
     {
       _id: "05",
@@ -233,55 +299,76 @@ const ProjectDetails = () => {
       live_url: "https://assignment-three-tau.vercel.app",
       git_url: "https://github.com/Dodul01/Blogs-Backend",
       htmlDescription: `<div class="space-y-6 text-sm leading-relaxed text-gray-300">
-      <h2 class="text-2xl font-bold text-white">📝 Blog REST API – Backend for a Blogging Platform</h2>
-    
-      <section>
-        <h3 class="text-lg font-semibold text-white">📌 Project Overview</h3>
-        <p>
-          The Blog REST API is a secure and scalable backend service for a blogging platform, designed to handle blog post creation, editing, deletion, and user management. It follows RESTful principles and supports both public and admin-level operations.
-        </p>
-      </section>
-    
-      <section>
-        <h3 class="text-lg font-semibold text-white">🚀 Features</h3>
-        <ul class="list-disc list-inside">
-          <li>Create, read, update, and delete blog posts (CRUD)</li>
-          <li>User registration, login, and JWT authentication</li>
-          <li>Role-based access control (Admin, Author, Reader)</li>
-          <li>Commenting system with user association</li>
-          <li>RESTful architecture for frontend integration</li>
-        </ul>
-      </section>
-    
-      <section>
-        <h3 class="text-lg font-semibold text-white">🛠️ Tech Stack</h3>
-        <ul class="list-disc list-inside">
-          <li>Node.js + Express.js</li>
-          <li>MongoDB with Mongoose</li>
-          <li>JWT for authentication</li>
-          <li>Zod or custom validation (if used)</li>
-        </ul>
-      </section>
-    
-      <section>
-        <h3 class="text-lg font-semibold text-white">📡 Selected API Endpoints</h3>
-        <ul class="list-disc list-inside">
-          <li><strong>GET /api/posts</strong> – List all posts</li>
-          <li><strong>POST /api/posts</strong> – Create a new post (auth)</li>
-          <li><strong>PUT /api/posts/:id</strong> – Update a post (author only)</li>
-          <li><strong>DELETE /api/posts/:id</strong> – Delete a post (admin)</li>
-          <li><strong>POST /api/auth/login</strong> – User login</li>
-        </ul>
-      </section>
-    
-      <section>
-        <h3 class="text-lg font-semibold text-white">🔗 Repository & Live</h3>
-        <ul class="list-disc list-inside">
-          <li><a href="https://assignment-three-tau.vercel.app" class="text-blue-400 hover:underline">Live Client</a></li>
-          <li><a href="https://github.com/Dodul01/Blogs-Backend" class="text-blue-400 hover:underline">GitHub – Backend</a></li>
-        </ul>
-      </section>
-    </div>`,
+  <h2 class="text-2xl font-bold text-white">📝 Blog REST API – Backend for a Blogging Platform</h2>
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">📌 Project Overview</h3>
+    <p>
+      The Blog REST API is a secure and scalable backend service for a blogging platform, designed to handle blog post creation, editing, deletion, and user management. It follows RESTful principles and supports both public and admin-level operations.
+    </p>
+  </section>
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">🚀 Features</h3>
+    <ul class="list-disc list-inside">
+      <li>Create, read, update, and delete blog posts (CRUD)</li>
+      <li>User registration, login, and JWT authentication</li>
+      <li>Role-based access control (Admin, Author, Reader)</li>
+      <li>Commenting system with user association</li>
+      <li>RESTful architecture for frontend integration</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">🛠️ Tech Stack</h3>
+    <ul class="list-disc list-inside">
+      <li>Node.js + Express.js</li>
+      <li>MongoDB with Mongoose</li>
+      <li>JWT for authentication</li>
+      <li>Zod or custom validation (if used)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">📡 Selected API Endpoints</h3>
+    <ul class="list-disc list-inside">
+      <li><strong>GET /api/posts</strong> – List all posts</li>
+      <li><strong>POST /api/posts</strong> – Create a new post (auth)</li>
+      <li><strong>PUT /api/posts/:id</strong> – Update a post (author only)</li>
+      <li><strong>DELETE /api/posts/:id</strong> – Delete a post (admin)</li>
+      <li><strong>POST /api/auth/login</strong> – User login</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">🛠️ Challenges Faced</h3>
+    <ul class="list-disc list-inside">
+      <li><strong>Role-Based Restrictions:</strong> Designing middleware to distinguish access rights between admins, authors, and readers</li>
+      <li><strong>Comment Association:</strong> Ensuring comments are correctly tied to users and posts</li>
+      <li><strong>Validation & Security:</strong> Managing strong validation and route protection with JWT and schemas</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">🚧 Future Plans</h3>
+    <ul class="list-disc list-inside">
+      <li>Add post likes and user reaction features</li>
+      <li>Enable post categorization and search filters</li>
+      <li>Integrate email notifications for comments and replies</li>
+      <li>Build a rate-limiting feature to prevent abuse</li>
+      <li>Offer GraphQL version for optimized client querying</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3 class="text-lg font-semibold text-white">🔗 Repository & Live</h3>
+    <ul class="list-disc list-inside">
+      <li><a href="https://assignment-three-tau.vercel.app" class="text-blue-400 hover:underline">Live Client</a></li>
+      <li><a href="https://github.com/Dodul01/Blogs-Backend" class="text-blue-400 hover:underline">GitHub – Backend</a></li>
+    </ul>
+  </section>
+</div>
+`,
     },
   ];
   const project = projects.find((item) => item._id === id);
